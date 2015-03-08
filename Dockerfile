@@ -1,15 +1,7 @@
-FROM shipimg/ubuntu1404_base:latest
+FROM shipimg/appbase:master.17
 MAINTAINER Avi "avi@shippable.com"
 
-RUN dpkg-divert --local --rename --add /sbin/initctl;
-RUN locale-gen en_US en_US.UTF-8;
-RUN dpkg-reconfigure locales;
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe restricted multiverse" > /etc/apt/sources.list ;
-
-RUN apt-get update -y;
-
-RUN apt-get -y install --force-yes wget curl g++ texinfo make vim;
-RUN apt-get -y install --force-yes supervisor sudo python-pip;
+RUN apt-get update;
 
 RUN echo "============ Installing mongodb ===============";\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10;\
