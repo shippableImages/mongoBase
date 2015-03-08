@@ -1,4 +1,4 @@
-FROM shippabledev/ubuntu:12.04
+FROM shipimg/ubuntu1404_base:latest
 MAINTAINER Avi "avi@shippable.com"
 
 RUN dpkg-divert --local --rename --add /sbin/initctl;
