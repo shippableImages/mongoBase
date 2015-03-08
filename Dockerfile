@@ -1,8 +1,7 @@
-FROM shipimg/ubuntu1204_base:latest
+FROM shipimg/ubuntu1404_base:latest
 MAINTAINER Avi "avi@shippable.com"
 
 RUN dpkg-divert --local --rename --add /sbin/initctl;
-RUN ln -s /bin/true /sbin/initctl;
 RUN locale-gen en_US en_US.UTF-8;
 RUN dpkg-reconfigure locales;
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe restricted multiverse" > /etc/apt/sources.list ;
